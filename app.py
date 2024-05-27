@@ -1,3 +1,6 @@
+# Import gevent and monkey-patch the ssl module
+import gevent.monkey
+gevent.monkey.patch_ssl()
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 from dotenv import load_dotenv
