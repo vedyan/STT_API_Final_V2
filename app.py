@@ -122,4 +122,10 @@ def toggle_transcription(data):
 
 if __name__ == '__main__':
     logging.info("Starting SocketIO server.")
-    socketio.run(app, host='0.0.0.0', port=80, allow_unsafe_werkzeug=True)
+    if __name__ == '__main__':
+    import os
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+    
+    server = pywsgi.WSGIServer(('', int(os.environ.get('PORT', 5000))), app, handler_class=WebSocketHandler)
+    server.serve_forever()
