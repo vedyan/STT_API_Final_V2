@@ -122,4 +122,4 @@ def toggle_transcription(data):
 
 if __name__ == '__main__':
     logging.info("Starting SocketIO server.")
-    socketio.run(app, debug=True)
+    socketio.run(app, host='0.0.0.0', port=80)
