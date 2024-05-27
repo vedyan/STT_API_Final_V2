@@ -121,8 +121,6 @@ def toggle_transcription(data):
         transcription_event.set()
 
 if __name__ == '__main__':
-    logging.info("Starting SocketIO server.")
-    if __name__ == '__main__':
     import os
     from gevent import pywsgi
     from geventwebsocket.handler import WebSocketHandler
