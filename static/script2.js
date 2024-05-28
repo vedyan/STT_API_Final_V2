@@ -1,6 +1,4 @@
-var socket = io.connect(
-    "http://" + window.location.hostname + ":" + location.port
-  );
+var socket = io.connect("https://" + window.location.hostname + ":" + location.port);
   
   var isTranscribing = false;
   
