@@ -23,7 +23,7 @@ config = DeepgramClientOptions(
 )
 
 # Initialize Deepgram client and connection
-deepgram = DeepgramClient("", config)
+deepgram = DeepgramClient("c575e6d5bf710b102f05d9af5e745d634b150975", config)
 dg_connection = deepgram.listen.live.v("1")
 
 # Track transcription state
@@ -123,6 +123,5 @@ def toggle_transcription(data):
 
 if __name__ == '__main__':
     logging.info("Starting SocketIO server.")
-    # socketio.run(app, debug=True)
     socketio.run(app, host='0.0.0.0', port=5000)
 
