@@ -4,4 +4,3 @@ Flask-SocketIO
 python-dotenv
 gunicorn
 gevent
-gevent-websocket
