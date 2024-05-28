@@ -1,6 +1,3 @@
-# Import gevent and monkey-patch the ssl module
-import gevent.monkey
-gevent.monkey.patch_ssl()
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 from dotenv import load_dotenv
@@ -103,7 +100,8 @@ def on_disconnect():
 
 @app.route('/')
 def index():
-    return render_template('index2.html')
+    message = "YES ITS WORKING"
+    return render_template('index2.html', message=message)
 
 @socketio.on('disconnect')
 def handle_disconnect():
@@ -124,9 +122,6 @@ def toggle_transcription(data):
         transcription_event.set()
 
 if __name__ == '__main__':
-    import os
-    from gevent import pywsgi
-    from geventwebsocket.handler import WebSocketHandler
-    
-    server = pywsgi.WSGIServer(('', int(os.environ.get('PORT', 5000))), app, handler_class=WebSocketHandler)
-    server.serve_forever()
+    logging.info("Starting SocketIO server.")
+    socketio.run(app, host='0.0.0.0', port=8080)
+
