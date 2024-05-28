@@ -1,4 +1,6 @@
-var socket = io.connect("https://" + window.location.hostname + ":" + location.port);
+var socket = io.connect(
+    "http://" + window.location.hostname + ":" + location.port
+  );
   
   var isTranscribing = false;
   
@@ -18,4 +20,4 @@ var socket = io.connect("https://" + window.location.hostname + ":" + location.p
   
   socket.on("transcription_update", function (data) {
     document.getElementById("captions").innerHTML = data.transcription;
-  });  
+  });
