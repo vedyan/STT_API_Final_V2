@@ -1,6 +1,7 @@
 deepgram-sdk
-Flask
-Flask-SocketIO
-python-dotenv
+Flask==2.1.0
+Flask-SocketIO==5.1.1
+python-dotenv==0.19.2
 gunicorn
-gevent
+eventlet==0.32.0
+gevent==21.8.0
