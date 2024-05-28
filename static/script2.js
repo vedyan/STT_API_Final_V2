@@ -1,4 +1,4 @@
-var socket = io.connect("wss://" + window.location.hostname + ":" + location.port);
+var socket = io.connect("wss://stt-api-final-v2.onrender.com:443");
   
   var isTranscribing = false;
   
