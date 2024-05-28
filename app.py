@@ -15,7 +15,8 @@ load_dotenv()
 
 app = Flask(__name__)
 # socketio = SocketIO(app)
-socketio = SocketIO(app, **{'transports': ['websocket'], 'ssl_context': 'adhoc'})
+# socketio = SocketIO(app, **{'transports': ['websocket'], 'ssl_context': 'adhoc'})
+socketio = SocketIO(app, **{'transports': ['websocket']})
 
 # Set up client configuration
 config = DeepgramClientOptions(
