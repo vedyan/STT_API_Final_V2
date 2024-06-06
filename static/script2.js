@@ -1,6 +1,8 @@
 // var socket = io.connect("wss://stt-api-final-v2.onrender.com:443");
-var socket = io.connect("wss://cdn.socket.io/4.7.5/socket.io.js"); 
-
+// var socket = io.connect("wss://cdn.socket.io/4.7.5/socket.io.js"); 
+var socket = io.connect(
+  "http://" + window.location.hostname + ":" + location.port
+);
   
   var isTranscribing = false;
   
