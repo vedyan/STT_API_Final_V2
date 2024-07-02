@@ -2,7 +2,7 @@ deepgram-sdk
 Flask==3.0.3
 Flask-SocketIO==5.3.6
 python-dotenv
-logging
+# logging
 Microphone
 gunicorn
 Flask-Cors
