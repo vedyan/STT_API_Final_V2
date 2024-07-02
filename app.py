@@ -15,7 +15,8 @@ load_dotenv()
 
 app = Flask(__name__)
 # CORS(app,resources={r"/*":{"origins":"*"}})
-CORS(app)
+# CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://app.rework.club"}})
 socketio = SocketIO(app,cors_allowed_origins="*")
 # socketio = SocketIO(app)
 
