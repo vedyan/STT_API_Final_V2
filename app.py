@@ -104,7 +104,7 @@ def on_disconnect():
 @app.route('/')
 def index():
     message = "YES ITS WORKING"
-    return render_template('index.html', message=message)
+    return render_template('index2.html', message=message)
 
 @socketio.on('disconnect')
 def handle_disconnect():
