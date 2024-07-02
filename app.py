@@ -10,13 +10,14 @@ from deepgram import (
     LiveOptions,
     Microphone,
 )
-
+from flask_cors import CORS 
 load_dotenv()
 
 app = Flask(__name__)
+# CORS(app,resources={r"/*":{"origins":"*"}})
+CORS(app)
+socketio = SocketIO(app,cors_allowed_origins="*")
 # socketio = SocketIO(app)
-socketio = SocketIO(app, **{'transports': ['websocket'], 'ssl_context': 'adhoc'})
-# socketio = SocketIO(app, **{'transports': ['websocket']})
 
 # Set up client configuration
 config = DeepgramClientOptions(
@@ -103,7 +104,7 @@ def on_disconnect():
 @app.route('/')
 def index():
     message = "YES ITS WORKING"
-    return render_template('index2.html', message=message)
+    return render_template('index.html', message=message)
 
 @socketio.on('disconnect')
 def handle_disconnect():
@@ -126,4 +127,3 @@ def toggle_transcription(data):
 if __name__ == '__main__':
     logging.info("Starting SocketIO server.")
     socketio.run(app, host='0.0.0.0', port=5000)
-
