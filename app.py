@@ -14,9 +14,9 @@ from flask_cors import CORS
 load_dotenv()
 
 app = Flask(__name__)
-# CORS(app,resources={r"/*":{"origins":"*"}})
+CORS(app,resources={r"/*":{"origins":"*"}})
 # CORS(app)
-CORS(app, resources={r"/*": {"origins": "https://rework-ai-assessment.vercel.app/"}})
+# CORS(app, resources={r"/*": {"origins": "https://rework-ai-assessment.vercel.app/"}})
 socketio = SocketIO(app,cors_allowed_origins="*")
 # socketio = SocketIO(app)
 
