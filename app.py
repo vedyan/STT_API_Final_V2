@@ -102,10 +102,10 @@ def on_disconnect():
     else:
         logging.info("No active dg_connection to disconnect from")
 
-# @app.route('/')
-# def index():
-#     message = "YES ITS WORKING"
-#     return render_template('index2.html', message=message)
+@app.route('/')
+def index():
+    message = "YES ITS WORKING"
+    return render_template('index.html', message=message)
 
 @socketio.on('disconnect')
 def handle_disconnect():
